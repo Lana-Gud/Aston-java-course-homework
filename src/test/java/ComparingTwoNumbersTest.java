@@ -1,26 +1,22 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+﻿import org.testng.annotations.Test;
+import static org.testng.Assert.*;
 
 public class ComparingTwoNumbersTest {
-
     @Test
     public void testCompareEqual() {
         ComparingTwoNumbers comparator = new ComparingTwoNumbers();
-        String result = comparator.compare(5, 5);
-        assertTrue(result.contains("равны"));
+        assertEquals(comparator.compare(5, 5), \"Значения 5 и 5 равны\");
     }
-
+    
     @Test
-    public void testCompareFirstLess() {
+    public void testCompareLess() {
         ComparingTwoNumbers comparator = new ComparingTwoNumbers();
-        String result = comparator.compare(3, 7);
-        assertTrue(result.contains("меньше"));
+        assertEquals(comparator.compare(3, 7), \"Первое значение (3) меньше второго (7)\");
     }
-
+    
     @Test
-    public void testCompareFirstGreater() {
+    public void testCompareGreater() {
         ComparingTwoNumbers comparator = new ComparingTwoNumbers();
-        String result = comparator.compare(9, 4);
-        assertTrue(result.contains("больше"));
+        assertEquals(comparator.compare(10, 2), \"Первое значение (10) больше второго (2)\");
     }
 }

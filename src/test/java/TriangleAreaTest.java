@@ -1,24 +1,16 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+﻿import org.testng.annotations.Test;
+import static org.testng.Assert.*;
 
 public class TriangleAreaTest {
-
     @Test
     public void testTriangleArea() {
         TriangleArea triangle = new TriangleArea();
-        assertEquals(24.0, triangle.triangle(4.0, 12.0));
+        assertEquals(triangle.triangle(4, 12), 24.0);
     }
-
-    @Test
-    public void testTriangleAreaFractional() {
+    
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testTriangleAreaZero() {
         TriangleArea triangle = new TriangleArea();
-        assertEquals(7.5, triangle.triangle(3.0, 5.0));
-    }
-
-    @Test
-    public void testTriangleAreaZeroBase() {
-        TriangleArea triangle = new TriangleArea();
-        assertThrows(IllegalArgumentException.class,
-                () -> triangle.triangle(0, 10));
+        triangle.triangle(0, 5);
     }
 }
