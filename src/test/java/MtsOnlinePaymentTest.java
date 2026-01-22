@@ -1,3 +1,4 @@
+//Проверка скачивания с GitHub
 import com.mts.pages.OnlinePaymentPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.TimeoutException;
